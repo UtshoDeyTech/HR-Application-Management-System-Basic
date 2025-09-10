@@ -37,21 +37,37 @@ HR Application/
 - Docker and Docker Compose installed
 - At least 8GB RAM available for Oracle Database
 
+### Environment Configuration
+
+1. **Copy the example environment file**:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Edit the `.env` file** to match your deployment environment:
+   ```bash
+   # For local development (default)
+   BACKEND_API_URL=http://localhost:8080/api
+   
+   # For production deployment
+   BACKEND_API_URL=https://your-api-domain.com/api
+   ORACLE_HOST=your-oracle-server
+   ORACLE_PASSWORD=your-secure-password
+   ```
+
 ### Running the Application
 
-1. **Clone or download the project files**
-
-2. **Start all services with Docker Compose**:
+1. **Start all services with Docker Compose**:
    ```bash
    docker-compose up --build
    ```
 
-3. **Wait for services to start** (Oracle DB may take 2-3 minutes to initialize):
+2. **Wait for services to start** (Oracle DB may take 2-3 minutes to initialize):
    - Oracle Database: `localhost:1521`
    - Backend API: `http://localhost:8080`
    - Frontend: `http://localhost:4200`
 
-4. **Access the application**:
+3. **Access the application**:
    Open your browser and go to `http://localhost:4200`
 
 ### First Time Setup
